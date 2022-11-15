@@ -1,4 +1,4 @@
-package com.example.fundamentals;
+package com.wei.first;
 
 import androidx.appcompat.app.AppCompatActivity;
 

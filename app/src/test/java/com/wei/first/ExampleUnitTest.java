@@ -1,4 +1,4 @@
-package com.example.fundamentals;
+package com.wei.first;
 
 import org.junit.Test;
 

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.fundamentals'
+    namespace 'com.wei.first'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.fundamentals"
+        applicationId "com.wei.first"
         minSdk 21
         targetSdk 32
         versionCode 1
