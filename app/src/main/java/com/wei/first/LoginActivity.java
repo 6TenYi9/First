@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -37,6 +39,10 @@ public class LoginActivity extends AppCompatActivity {
         mGirl=findViewById(R.id.girl);
         fondo=findViewById(R.id.fondos);
 
+        ImageView logo=findViewById(R.id.girl);
+        Animation myanim=AnimationUtils.loadAnimation(this,R.anim.fadein);
+        logo.startAnimation(myanim);
+
         Glide.with(mGirl)
                 //.load(R.drawable.girl)
                 .load("https://images.unsplash.com/photo-1640343631072-37ff06fd3397?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80") //persone
@@ -58,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         startActivity(intent);
+
 
     }
 }
