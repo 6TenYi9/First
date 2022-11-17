@@ -43,6 +43,9 @@ public class LoginActivity extends AppCompatActivity {
         Animation myanim=AnimationUtils.loadAnimation(this,R.anim.fadein);
         logo.startAnimation(myanim);
 
+        ImageView logo2=findViewById(R.id.fondos);
+        Animation myanim2=AnimationUtils.loadAnimation(this,R.anim.blink);
+
         Glide.with(mGirl)
                 //.load(R.drawable.girl)
                 .load("https://images.unsplash.com/photo-1640343631072-37ff06fd3397?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80") //persone
