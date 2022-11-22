@@ -29,8 +29,8 @@ public class Main extends AppCompatActivity {
         registerForContextMenu(vista);
 
         miVisorWeb=(WebView)findViewById(R.id.textview);
-        miVisorWeb.loadUrl("https://thispersondoesnotexist.com");
-
+        /*miVisorWeb.loadUrl("https://thispersondoesnotexist.com");*/
+        miVisorWeb.loadUrl("https://thiscatdoesnotexist.com/");
 
         swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
