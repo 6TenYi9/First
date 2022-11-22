@@ -1,26 +1,36 @@
 package com.wei.first;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Main extends AppCompatActivity {
+
+    private SwipeRefreshLayout swipeLayout;
+    private WebView miVisorWeb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView vista=(TextView) findViewById(R.id.textview);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) WebView vista = (WebView) findViewById(R.id.textview);
         registerForContextMenu(vista);
 
+        miVisorWeb=(WebView)findViewById(R.id.textview);
+        miVisorWeb.loadUrl("https://thispersondoesnotexist.com");
 
+
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
+        swipeLayout.setOnRefreshListener(mOnRefreshListener);
     }
 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
@@ -42,4 +52,16 @@ public class Main extends AppCompatActivity {
                 return false;
         }
     }
+
+    protected SwipeRefreshLayout.OnRefreshListener
+    mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            Toast toast0 = Toast.makeText(Main.this, "going swipeREFRESH",
+                    Toast.LENGTH_LONG);
+            toast0.show();
+            miVisorWeb.reload();
+            swipeLayout.setRefreshing(false);
+        }
+    };
 }

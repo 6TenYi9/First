@@ -6,10 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".Main">
 
-    <TextView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/myswipe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/textview"
-        android:text="@string/wellcome"
-        android:gravity="center"/>
+        android:layout_height="match_parent">
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textview"
+            android:gravity="center"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
