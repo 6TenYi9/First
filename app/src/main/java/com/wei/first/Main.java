@@ -1,6 +1,7 @@
 package com.wei.first;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class Main extends AppCompatActivity {
 
@@ -41,8 +44,21 @@ public class Main extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.item1:
-                Toast toast=Toast.makeText(this,"item copiar",Toast.LENGTH_LONG);
-                toast.show();
+                /*Toast toast=Toast.makeText(this,"item copiar",Toast.LENGTH_LONG);
+                toast.show();*/
+
+                final ConstraintLayout mLayout=findViewById(R.id.constLayout);
+                Snackbar snackbar=Snackbar
+                        .make(mLayout,"Se copiará la imagen en portapapeles!",Snackbar.LENGTH_LONG)
+                        .setAction("ENTENDIDO", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Snackbar snackbar1=Snackbar.make(mLayout,"Copiado!",Snackbar.LENGTH_LONG);
+                                snackbar1.show();
+                            }
+                        });
+                snackbar.show();
+
                 return true;
             case R.id.item2:
                 Toast toast2=Toast.makeText(this,"Dowloading item ...",Toast.LENGTH_LONG);
