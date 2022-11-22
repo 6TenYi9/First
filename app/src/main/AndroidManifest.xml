@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wei.first">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,10 +16,17 @@
         android:theme="@style/MyTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Main"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".splash"
             android:exported="true"
-            android:theme="@style/NoActBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +41,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".LoginActivity"
             android:exported="true"

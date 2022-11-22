@@ -9,15 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button go;
+    Button go,next;
     ImageView mGirl;
     ImageView fondo;
 
@@ -27,7 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        go=findViewById(R.id.ok);
+        go=findViewById(R.id.signup);
+        next=findViewById(R.id.login);
 
         go.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,15 +35,23 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login();
+            }
+        });
+
+
         mGirl=findViewById(R.id.girl);
         fondo=findViewById(R.id.fondos);
 
-        ImageView logo=findViewById(R.id.girl);
+        /*ImageView logo=findViewById(R.id.girl);
         Animation myanim=AnimationUtils.loadAnimation(this,R.anim.fadein);
         logo.startAnimation(myanim);
 
         ImageView logo2=findViewById(R.id.fondos);
-        Animation myanim2=AnimationUtils.loadAnimation(this,R.anim.blink);
+        Animation myanim2=AnimationUtils.loadAnimation(this,R.anim.blink);*/
 
         Glide.with(mGirl)
                 //.load(R.drawable.girl)
@@ -69,5 +76,9 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
 
 
+    }
+    public void login(){
+        Intent intent=new Intent(this,Main.class);
+        startActivity(intent);
     }
 }

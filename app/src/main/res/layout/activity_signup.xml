@@ -15,7 +15,7 @@
         android:contentDescription="@string/img"
         android:src="@drawable/dragon"
         app:layout_constraintEnd_toEndOf="@+id/cancel"
-        app:layout_constraintStart_toStartOf="@+id/ok"
+        app:layout_constraintStart_toStartOf="@+id/login"
         app:layout_constraintBottom_toTopOf="@id/username" />
 
 
@@ -82,7 +82,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/ok"
+        android:id="@+id/login"
         android:text="@string/confirmar"
         app:layout_constraintStart_toStartOf="@id/leftguide"
         app:layout_constraintEnd_toStartOf="@+id/cancel"
@@ -93,7 +93,7 @@
     <Button
         android:id="@+id/cancel"
         android:text="@string/cancelar"
-        app:layout_constraintStart_toEndOf="@+id/ok"
+        app:layout_constraintStart_toEndOf="@+id/login"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintEnd_toEndOf="@+id/rightguide"
         style="@style/cancel" />

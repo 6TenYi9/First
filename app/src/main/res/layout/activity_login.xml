@@ -22,8 +22,8 @@
         android:contentDescription="@string/img"
         android:scaleType="fitStart"
         app:layout_constraintBottom_toTopOf="@+id/username"
-        app:layout_constraintEnd_toEndOf="@+id/cancel"
-        app:layout_constraintStart_toStartOf="@+id/ok"/>
+        app:layout_constraintEnd_toEndOf="@+id/login"
+        app:layout_constraintStart_toStartOf="@+id/login"/>
         <!--android:src="@drawable/dragon"-->
 
 
@@ -84,7 +84,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/ok"
+        android:id="@+id/login"
         android:text="@string/login"
         app:layout_constraintStart_toStartOf="@id/leftguide"
         app:layout_constraintEnd_toStartOf="@+id/rightguide"
@@ -93,9 +93,9 @@
         style="@style/confirm" />
 
     <Button
-        android:id="@+id/cancel"
+        android:id="@+id/signup"
         android:text="@string/sign"
-        app:layout_constraintTop_toBottomOf="@+id/ok"
+        app:layout_constraintTop_toBottomOf="@+id/login"
         app:layout_constraintStart_toStartOf="@id/leftguide"
         app:layout_constraintEnd_toEndOf="@+id/rightguide"
         style="@style/botontransp" />
