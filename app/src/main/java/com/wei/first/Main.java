@@ -5,8 +5,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
@@ -24,6 +26,9 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*ActionBar actionBar=getActionBar();
+        actionBar.setIcon(R.drawable.dragon);*/
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) WebView vista = (WebView) findViewById(R.id.textview);
         registerForContextMenu(vista);
@@ -80,4 +85,35 @@ public class Main extends AppCompatActivity {
             swipeLayout.setRefreshing(false);
         }
     };
+
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu){
+        getMenuInflater().inflate(R.menu.menu_context,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+
+        if (id==R.id.item1){
+            Toast toast = Toast.makeText(this, "RELOADING...", Toast.LENGTH_LONG);
+            toast.show();
+            miVisorWeb.reload();
+        }
+        if (id==R.id.item2){
+            final ConstraintLayout mLayout=findViewById(R.id.constLayout);
+            Snackbar snackbar=Snackbar
+                    .make(mLayout,"Se descargará la imagen en su equipo!",Snackbar.LENGTH_LONG)
+                    .setAction("OK", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Snackbar snackbar1=Snackbar.make(mLayout,"Descargando...",Snackbar.LENGTH_LONG);
+                            snackbar1.show();
+                        }
+                    });
+            snackbar.show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

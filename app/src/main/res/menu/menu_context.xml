@@ -4,11 +4,11 @@
 
     <item
         android:id="@+id/item1"
-        android:title="copy"
+        android:icon="@drawable/refresh"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/item2"
-        android:title="download"
+        android:icon="@drawable/dowload"
         app:showAsAction="ifRoom"/>
 
 </menu>
