@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#651A26"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/img"
+        android:src="@drawable/dragon"
+        app:layout_constraintEnd_toEndOf="@+id/cancel"
+        app:layout_constraintStart_toStartOf="@+id/login"
+        app:layout_constraintBottom_toTopOf="@id/username" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/rightguide"
+        app:layout_constraintStart_toStartOf="@+id/leftguide"
+        app:layout_constraintBottom_toTopOf="@id/email"
+        app:startIconDrawable="@drawable/crown"
+        style="@style/TextInputLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rightguide"
+        app:layout_constraintStart_toStartOf="@+id/leftguide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/email"
+        style="@style/TextInputLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password2"
+        android:layout_height="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/leftguide"
+        app:layout_constraintEnd_toEndOf="@+id/rightguide"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/espada"
+        style="@style/TextInputLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Intpassword"
+            android:inputType="numberPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_height="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/password2"
+        app:layout_constraintStart_toStartOf="@+id/leftguide"
+        app:layout_constraintEnd_toEndOf="@+id/rightguide"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/espada"
+        style="@style/TextInputLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password2"
+            android:inputType="numberPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:text="@string/confirmar"
+        app:layout_constraintStart_toStartOf="@id/leftguide"
+        app:layout_constraintEnd_toStartOf="@+id/cancel"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:backgroundTint="@color/buttonselector"
+        style="@style/confirm" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:text="@string/cancelar"
+        app:layout_constraintStart_toEndOf="@+id/login"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="@+id/rightguide"
+        style="@style/cancel" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftguide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightguide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,9 +27,6 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*ActionBar actionBar=getActionBar();
-        actionBar.setIcon(R.drawable.dragon);*/
-
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) WebView vista = (WebView) findViewById(R.id.textview);
         registerForContextMenu(vista);
 

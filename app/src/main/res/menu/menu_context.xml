@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/">
 
     <item
         android:id="@+id/item1"
+        android:title="refrescar"
         android:icon="@drawable/refresh"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/item2"
+        android:title="descargar"
         android:icon="@drawable/dowload"
         app:showAsAction="ifRoom"/>
-
+    <item
+        android:id="@+id/res"
+        android:icon="@drawable/res"
+        app:showAsAction="ifRoom"
+        android:title="otros">
+        <menu>
+            <item
+                android:id="@+id/item2_1"
+                android:title="Configuración"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/item2_2"
+                android:title="Contacto"
+                app:showAsAction="ifRoom"/>
+        </menu>
+    </item>
 </menu>
