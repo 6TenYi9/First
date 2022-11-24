@@ -75,7 +75,7 @@ public class Main extends AppCompatActivity {
     mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            Toast toast0 = Toast.makeText(Main.this, "going swipeREFRESH",
+            Toast toast0 = Toast.makeText(Main.this, "REFRESHING...",
                     Toast.LENGTH_LONG);
             toast0.show();
             miVisorWeb.reload();

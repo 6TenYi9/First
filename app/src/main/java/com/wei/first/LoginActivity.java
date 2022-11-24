@@ -60,12 +60,12 @@ public class LoginActivity extends AppCompatActivity {
                 //.load("https://wallpaperaccess.com/full/1796653.jpg") //dragon
                 .circleCrop()
                 .into(mGirl);
-        Glide.with(fondo)
+        /*Glide.with(fondo)
                 .load("https://images.unsplash.com/photo-1565214975484-3cfa9e56f914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1482&q=80")
                 .transition(DrawableTransitionOptions.withCrossFade(2000))
                 .placeholder(new ColorDrawable(this.getResources().getColor(R.color.holder)))
                 .centerCrop()
-                .into(fondo);
+                .into(fondo);*/
     }
     public void signup(View view){
         Intent intent=new Intent(this,SignupActivity.class);
