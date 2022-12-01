@@ -29,4 +29,8 @@
         <item name="android:layout_margin">8dp</item>
         <item name="strokeColor">#D8BCFF</item>
     </style>
+
+    <style name="botondialog" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#EA942A</item>
+    </style>
 </resources>

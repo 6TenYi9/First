@@ -14,15 +14,22 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+//import com.tomer.fadingtextview.FadingTextView;
 import com.wei.first.R;
 
 public class splash extends AppCompatActivity {
+
+    //transacción para textView:
+   // FadingTextView fadingTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         openApp();
+
+        //transación para textView:
+      //  fadingTextView=findViewById(R.id.title);
 
         ImageView fondo=findViewById(R.id.fondo);
         ImageView logo=findViewById(R.id.logo);

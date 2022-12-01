@@ -13,4 +13,5 @@
     <string name="Intpassword">Set Password</string>
     <string name="reborn">REBORN</string>
     <string name="wellcome">Wellcome!!!</string>
+    <string name="ses">Se ha expirado su tiempo de inicio de sesión, ¿Desea continuar?</string>
 </resources>

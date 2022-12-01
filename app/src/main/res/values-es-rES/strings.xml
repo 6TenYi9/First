@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">First</string>
+    <string name="username">usuario</string>
+    <string name="password">contraseña</string>
+    <string name="go">confirmar</string>
+    <string name="cancelar">cancelar</string>
+    <string name="login">iniciar</string>
+    <string name="sign">registrar</string>
+    <string name="img">icono</string>
+    <string name="email">correo</string>
+    <string name="password2">confirmar contraseña</string>
+    <string name="confirmar">siguente</string>
+    <string name="Intpassword">establecer contraseña</string>
+    <string name="reborn">REBORN</string>
+    <string name="wellcome">Bienvenido!!!</string>
+    <string name="ses">Se ha expirado su tiempo de inicio de sesión, desea continuar?</string>
+</resources>

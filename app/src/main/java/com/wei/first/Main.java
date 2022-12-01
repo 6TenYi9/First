@@ -1,20 +1,25 @@
 package com.wei.first;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Main extends AppCompatActivity {
@@ -36,6 +41,54 @@ public class Main extends AppCompatActivity {
 
         swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
+    }
+
+    //dialogo modal
+    public void showAlertDialogButtonClicked(Main mainActivity){
+        MaterialAlertDialogBuilder builder=new MaterialAlertDialogBuilder(this);
+
+        /*builder.setTitle("Alerta!!");
+        builder.setMessage("se ha exipirado su tiempo de registro, desea continuar?");
+        builder.setIcon(R.drawable.dragon);
+        builder.setCancelable(false);*/
+
+        builder.setView(getLayoutInflater().inflate(R.layout.alertdialog,null));
+
+        Button confirmar,cancelar;
+
+        /*confirmar=findViewById(R.id.co);
+        cancelar=findViewById(R.id.ca);
+
+        confirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });*/
+        builder.setPositiveButton("confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog dialog=builder.create();
+        dialog.show();
     }
 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
@@ -94,6 +147,10 @@ public class Main extends AppCompatActivity {
         int id=item.getItemId();
 
         if (id==R.id.item1){
+            //alert dialog
+            showAlertDialogButtonClicked(Main.this);
+
+
             Toast toast = Toast.makeText(this, "RELOADING...", Toast.LENGTH_LONG);
             toast.show();
             miVisorWeb.reload();
