@@ -68,4 +68,8 @@
 ![alt text](IMG/img19.png)
 ![alt text](IMG/img20.png)
 
+### Dialogo de alerta
+
+> 
+
 [Subir](#top)

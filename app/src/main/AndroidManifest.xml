@@ -16,9 +16,16 @@
         android:theme="@style/MyTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityAppBt"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Main"
             android:exported="false"
-            android:parentActivityName=".LoginActivity" >
+            android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
